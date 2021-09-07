@@ -1,0 +1,51 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only color="primary">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-label style="margin-right:10px;">{{authState?.displayName || authState?.systemName | uppercase}}</ion-label>
+    <ion-label style="margin-right:10px;">{{userName | uppercase}}</ion-label>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list padding no-margin>
+
+    <button ion-button icon-right full color="primary" *ngIf="isLogAdmin" (tap)="downloadLogs()">
+      <ng-svg-icon name="my_library_books" style="padding:2px; margin-right:10px;"></ng-svg-icon>
+      View Logs
+    </button>
+
+    <button ion-button icon-right full color="primary" (tap)="downloadUserLogs()">
+      <ng-svg-icon name="my_library_books" style="padding:2px; margin-right:10px;"></ng-svg-icon>
+      Download User Logs
+    </button>
+    <button ion-button icon-left full color="danger" (tap)="logout()">
+      <ng-svg-icon name="logout" style="padding:2px; margin-right:10px;"></ng-svg-icon>
+      Logout
+    </button>
+  </ion-list>
+</ion-content> -->
+<ion-list>
+  <!--ion-list-header>
+    Ionic Header
+  </ion-list-header-->
+  <ion-item button="true" no-lines>
+    <a href="#" style="text-decoration:none;">
+      <div>My Profile</div>
+    </a>
+  </ion-item>
+  <ion-item button no-lines>
+    <a href="#" style="text-decoration:none;">
+      <div>Account Settings</div>
+    </a>
+  </ion-item>
+  <ion-item button no-lines (click)="logout()">
+    <a href="#" style="text-decoration:none;">
+      <div>Log Out</div>
+    </a>
+  </ion-item>
+</ion-list>

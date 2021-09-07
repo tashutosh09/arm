@@ -1,0 +1,98 @@
+{
+
+    "REST_END_POINT": {
+
+        "BASE_PATH_AUTHN": "http://127.0.0.1:9001/",
+
+        "BASE_PATH_AUTHZ": "http://127.0.0.1:9001/",
+
+        "BASE_PATH": "http://10.0.3.27:8400/",
+
+        "QUERY_END_POINT": "proxy/v1/hive/execute-dml",
+
+        "SELECT_QUERY_END_POINT": "proxy/v1/hive/query",
+
+        "CATEGORUES_END_POINT": "proxy/v1/feedmgr/categories",
+		
+		"HIVE_SCHEMA_END_POINT": "proxy/v1/hive/schemas/",
+
+        "LOGIN": "login",
+
+        "USER_DETAILS": "proxy/v1/about/me",
+
+        "AUTH": "Basic ZGxhZG1pbjM6R1RAYWRtaW4xMjM0NQ==",
+
+        "AUTH1": "Basic ZGxhZG1pbjM6R1RAYWRtaW4xMjM0NQ=="
+
+    },
+	"ADMIN_USER":{
+		"USERNAME1":"dladmin3",
+		
+		"USERNAME2":"dladmin3",
+		
+		"PASSWORD": "GT@admin12345"
+	},
+
+    "DATABASE": {
+
+        "HOST": "10.0.3.27",
+
+        "PORT": 3306,
+
+        "USER": "root",
+
+        "PASSWORD": "GT@admin12345",
+
+        "DATABASE": "RuleMetadata_qa",
+
+        "CONNECTION_LIMIT": 50,
+
+        "DEBUG": false,
+
+        "ALLOW_MULTIPLE_STATEMENTS": true
+
+    },
+
+    "SECRET": {
+
+        "jtw_key": "gtddl12",
+		
+		"jwt_key": "gtddl12",
+
+        "expiresIn": 3600,
+
+        "encryption_key": "qedkjadsjkasnfkjbaksjhdbkas"
+
+    },
+
+    "CRON_JOB": {
+
+        "TIMER": "*/5 * * * * *"
+
+    },
+
+    "RULE_RUN_HISTORY_CACHE": {
+
+        "TIMER": "*/59 * * * *",
+
+        "LIFE": 3600
+
+    },
+
+    "LDAP": {
+
+        "ROOT_DN": "cn=ldapadm,dc=gt,dc=com",
+
+        "SECRET": "ldppassword"
+
+    },
+
+    "PORT": 10020,
+
+    "LOGS": "../server-logs",
+
+    "TEMP": "../server-temp",
+
+    "RUNNING_LIMIT" : 5
+
+}

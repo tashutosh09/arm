@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Manage Rule</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Rule Name</ion-label>
+      <ion-input [disabled]="readOnlyView" type="text" [(ngModel)]="rule.RuleName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Description</ion-label>
+      <ion-input [disabled]="readOnlyView" type="text" [(ngModel)]="rule.RuleDescription"></ion-input>
+    </ion-item>
+
+    <div *ngIf="!readOnlyView">
+      <ion-item>
+        <ion-label stacked>New Query</ion-label>
+      </ion-item>
+      <codemirror [(ngModel)]="newQuery" [config]="codeEditorEditableConfig"></codemirror>
+    </div>
+
+    <ion-list>
+      <ion-list-header>
+        Queries
+      </ion-list-header>
+
+      <ion-card *ngFor="let query of ruleQueries">
+        <ion-card-header (tap)="expandedQueryID = expandedQueryID!=query.QueryID ? query.QueryID : null">
+          <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss A" disabled [(ngModel)]="query.VersionTimeStamp"></ion-datetime>
+        </ion-card-header>
+        <ion-card-content *ngIf="query.QueryID == expandedQueryID">
+          <codemirror [(ngModel)]="query.QueryString" [config]="codeEditorReadOnlyConfig"></codemirror>
+        </ion-card-content>
+
+        <ion-row float-right>
+          <button ion-button clear icon-right ngxClipboard [cbContent]="query.QueryID">
+            {{query.QueryID}}
+            <ion-icon name="md-copy"></ion-icon>
+          </button>
+        </ion-row>
+      </ion-card>
+
+    </ion-list>
+
+
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col col-6>
+      <button color="danger" full ion-button (tap)="close()">
+        Cancel
+      </button>
+    </ion-col>
+
+    <ion-col col-6>
+      <button [disabled]="!rule.RuleName || readOnlyView" full color="primary" ion-button (tap)="save()">
+        Save
+      </button>
+    </ion-col>
+
+
+  </ion-row>
+</ion-footer>

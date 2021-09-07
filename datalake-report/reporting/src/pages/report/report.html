@@ -1,0 +1,109 @@
+<ng-container *ngTemplateOutlet="showParams ? ruleParamsHeader : ruleHeaderSearch"></ng-container>
+
+
+<ion-content no-padding>
+  <ion-row *ngIf="rulesState && rulesState.loading">
+    <ion-spinner class="absolute-center" name="bubbles"></ion-spinner>
+  </ion-row>
+  <ng-container *ngTemplateOutlet="showParams? ruleParams : rules"></ng-container>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-row margin color="light">
+    <ion-col text-left col-6>
+      <button *ngIf="showParams" class="footer-buttons" color="danger" ion-button (tap)='resetParams()'>
+        Cancel
+      </button>
+    </ion-col>
+    <ion-col col-6 text-right no-margin>
+      <button ion-button *ngIf="!showParams" class="footer-buttons" color="secondary"
+        (tap)='getRulesParams()' [disabled]="!isAnyRuleSelected">
+        Run Selected
+      </button>
+
+      <button ion-button *ngIf="showParams" class="footer-buttons" color="secondary" (tap)='runRules()'>
+        Run Selected
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
+
+
+<!-- Templates here -->
+
+<!-- Rule listing Template -->
+<ng-template #rules>
+  <ion-card *ngIf="rulesToShow && rulesToShow.length>0" class="rule-list" no-padding no-margin>
+    <ion-list no-padding>
+      <ion-col no-padding [attr.col-4]="!rulesViewAsList ? true : null" [attr.col-12]="rulesViewAsList ? true : null"
+        *ngFor="let rule of rulesToShow">
+        <rule [rule]="rule" viewOnly="true"></rule>
+      </ion-col>
+    </ion-list>
+  </ion-card>
+  <ion-card *ngIf="!rulesToShow || rulesToShow.length === 0">
+    <ion-row text-center>
+      <ion-col col-6 text-left>
+        <ion-item no-padding style="background-color: unset !important;">
+          No Rules To Show
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ng-template>
+
+<!-- Rules listing header template -->
+<ng-template #ruleHeader>
+  <ion-header class="rules-header">
+    <ion-row>
+      <ion-col col-5 text-left style="font-weight:700;">
+        Rule
+      </ion-col>
+      <ion-col col-3 text-center style="font-weight:700;">
+        Status
+      </ion-col>
+      <ion-col col-2 text-center style="font-weight:700;">
+        History
+      </ion-col>
+      <ion-col col-2 text-right padding-right>
+        <button ion-button margin-right icon-only small outline (tap)="onSelectAllRules()"
+          style="width:28px; height:28px; top:0; bottom:0; margin:auto; position:absolute;">
+          <ion-icon [hidden]="!selectAllRules" name="checkmark"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+</ng-template>
+
+<ng-template #ruleHeaderSearch>
+  <ion-header class="rules-header-search">
+    <ion-row no-padding no-margin>
+      <ion-col col-11 text-left no-padding no-margin>
+        <ion-searchbar no-padding no-margin (ionInput)="onRuleFilter($event)"></ion-searchbar>
+      </ion-col>
+      <ion-col col-1 text-center no-padding no-margin>
+        <button ion-button no-padding no-margin icon-only small outline (tap)="onSelectAllRules()"
+          style="width:28px; height:28px; top:0; bottom:0; margin:auto; position:absolute;">
+          <ion-icon [hidden]="!selectAllRules" name="checkmark"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+</ng-template> 
+
+
+<!-- RuleParams listing Template -->
+<ng-template #ruleParams>
+  <rule-params #ruleParamsComponent [ruleGroupParams]="rulesParams"></rule-params>
+</ng-template>
+
+
+<!-- Rules listing header template -->
+<ng-template #ruleParamsHeader>
+  <ion-header class="rules-header">
+    <ion-row style="font-weight:700;">
+      {{selectedRuleCount}} Rules selected
+    </ion-row>
+  </ion-header>
+</ng-template>

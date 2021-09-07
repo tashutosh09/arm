@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Rule Run Details - {{item.RunStatus}}
+    </ion-title>
+    <ion-buttons end>
+
+      <button ion-button clear icon-only [disabled]="item.RunStatus!='COMPLETED'" (tap)="downloadResults()">
+        <ion-icon style="color:#FB8C00; font-weight:700;" name="ios-download-outline"></ion-icon>
+      </button>
+
+      <button ion-button padding icon-only (tap)="close()" color="light">
+        <ion-icon name="close"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <rule-history-details [ruleRunHistory]="item"></rule-history-details>
+</ion-content>

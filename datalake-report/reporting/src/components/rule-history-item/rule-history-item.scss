@@ -1,0 +1,18 @@
+rule-history-item {
+    .history-item{
+       // margin-top: 1px;
+        border: 0.5px solid lightgrey;
+    }
+
+    @media only screen and (max-width: 576px) {
+        .history-item{
+             padding-top:5px;
+         }
+    }
+
+    @media only screen and (max-width: 576px) {
+        #history-run-by{
+            padding-bottom:5px;
+        }
+    }
+}

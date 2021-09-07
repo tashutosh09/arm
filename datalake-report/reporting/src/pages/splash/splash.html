@@ -1,0 +1,61 @@
+<ion-content padding>
+  <ion-title text-center>
+    <span style="font-weight: 700;">Welcome</span>
+    <br>
+    <!--span style="font-style: italic; font-size: smaller;">{{authState?.displayName || authState?.systemName | uppercase}}</span-->
+    <span style="font-style: italic; font-size: smaller;">{{userName | uppercase}}</span>
+  </ion-title>
+  <ion-grid *ngIf="ruleCounts !=null" style="margin-top: 50px;">
+
+    <ion-row>
+      <ion-col col-12 text-center>
+        <ion-title>
+          <span style="font-weight: 700;">Audit Rule Statistics</span>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row margin-top>
+      <ion-col col-12 text-center>
+        <ion-title><span style="font-size: smaller;">All Rule Runs</span></ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #00ACC1"> RUNNING - {{ruleCounts?.running}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #1E88E5"> PENDING - {{ruleCounts?.pending}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #43A047"> COMPLETED - {{ruleCounts?.completed}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #e53935"> FAILED - {{ruleCounts?.failed}} </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row margin-top>
+      <ion-col col-12 text-center>
+        <ion-title><span style="font-size: smaller;">My Rule Runs</span></ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #00ACC1"> RUNNING - {{ruleCounts?.my_running}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #1E88E5"> PENDING - {{ruleCounts?.my_pending}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #43A047"> COMPLETED - {{ruleCounts?.my_completed}} </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full [disabled]="true" style="background-color: #e53935"> FAILED - {{ruleCounts?.my_failed}} </button>
+      </ion-col>
+    </ion-row> -->
+
+  </ion-grid>
+</ion-content>

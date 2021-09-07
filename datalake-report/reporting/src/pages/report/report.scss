@@ -1,0 +1,83 @@
+page-report {
+
+    ion-header{
+        background-color:transparent !important;
+    }
+
+    ion-content{
+        background-color:transparent !important;
+    }
+
+    @media only screen and (max-width: 576px) {
+        .scroll-content{
+            margin-left: unset !important;
+            margin-right: unset !important;
+            padding: unset !important;
+        }
+    }
+
+    .parameter-row{
+        margin-top:20px;
+        border-radius: 10px;
+        background-color:white;;
+    }
+
+    .rule-list{
+        background-color:white;
+        width: unset !important;
+    }
+
+   
+    .box-input{
+        border: 1px solid #CCC;
+        margin-top: 13px;
+        border-radius: 4px;
+        height: 36px;
+        padding-left: 6px;
+    }
+
+    .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .filter-label{
+        color: #455A64 !important;
+        font-size: 1.2rem !important;
+        font-weight: 700;
+    }
+
+    .rules-header{
+        background-color: color($colors, background-main) !important;
+        font-size:1.8rem;
+        padding-right:60px;
+        padding-left:40px;
+        padding-top:10px;
+        padding-bottom:10px;
+        color: color($colors, dark);
+    }
+
+    .rules-header-search{
+        background-color: color($colors, background-main) !important;
+        font-size:1.8rem;
+        padding-left:32px;
+        padding-right:32px;
+        padding-top:10px;
+        padding-bottom:10px;
+        color: color($colors, dark);
+    }
+
+    .rules-params-header{
+        background-color: color($colors, background-main) !important;
+        font-size:1.8rem;
+        padding-right:60px;
+        padding-left:40px;
+        padding-top:20px;
+        padding-bottom:20px;
+        color: color($colors, dark);
+    }
+
+    .footer-buttons{
+        width: 120px
+    }
+}

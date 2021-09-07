@@ -1,0 +1,55 @@
+[
+    {
+    key: "simpleSelectDefault",
+    title: "Simple Select with Default value",
+    dataType: "select",
+    defaultValue: "op2",
+    options: [
+            {
+        key: "Option 1",
+        value: "op1"
+            },
+            {
+        key: "Option 2",
+        value: "op2"
+            }
+        ]
+    },
+    {
+    key: "simpleSelect",
+    title: "Simple Select without Default value",
+    dataType: "select",
+    options: [
+            {
+        key: "Option 1",
+        value: "op1"
+            },
+            {
+        key: "Option 2",
+        value: "op2"
+            }
+        ]
+    },
+    {
+    key: 'simpelTextDefault',
+    dataType: 'text',
+    defaultValue: 'simpelText default value',
+    title: 'SimpelText Title with default value'
+    },
+    {
+    key: 'simpelText',
+    dataType: 'text',
+    title: 'SimpelText Title without default value'
+    },
+    {
+    key: 'simpelDate',
+    dataType: 'timestamp',
+    title: 'SimpelDate Title without default value'
+    },
+    {
+    key: 'simpelDateDefault',
+    dataType: 'timestamp',
+    defaultValue: '2018-01-05',
+    title: 'SimpelDate Title with default value'
+    }
+]

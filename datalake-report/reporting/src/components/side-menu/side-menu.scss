@@ -1,0 +1,88 @@
+side-menu {
+    ion-content{
+        background-color: color($colors, light) !important;
+    }
+
+ 
+
+    .item{
+        color: color($colors, secondary);
+        background-color: color($colors, background-main);
+    }
+    .activated{
+        background-color: color($colors, primary) !important;
+    }
+
+    .panel-heading{
+        color: color($colors, secondary);
+        background-color: color($colors, background-main);
+        padding:4px;
+        padding-left:16px;
+        width:100%;
+        border-bottom: 1px outset color($colors, light) !important;
+    }
+
+    .dropup{
+        .panel-heading{
+            background-color: #eaeaea;
+        }
+    }
+
+    .panel-heading:hover{
+        cursor: pointer;
+    }
+
+    button{
+        border-bottom: 1px solid color($colors, secondary_light) !important;
+        .item-inner{
+            border-bottom: unset !important;
+        }
+    }
+}
+
+.rule-group-text{
+    font-size: medium;
+}
+
+.industry-text{
+    font-size: small;
+}
+
+.rule-sub-group-text{
+    font-size: smaller;
+}
+
+:root {
+    --gray-dark: #343a40;
+    --blue: #03a9f3;
+    --indigo: #6610f2;
+    --purple: #4f2e7f;
+    --pink: #e83e8c;
+    --red: #e46a76;
+    --orange: #fb9678;
+    --yellow: #fec107;
+    --green: #00c292;
+    --teal: #20c997;
+    --cyan: #01c0c8;
+    --white: #fff;
+    --gray: #6c757d;
+    --primary: #fb9678;
+    --secondary: #f8f9fa;
+    --success: #00c292;
+    --info: #03a9f3;
+    --warning: #fec107;
+    --danger: #e46a76;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --cyan: #01c0c8;
+    --purple: #4f2e7f;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "GT-Walsheim-Pro", sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+

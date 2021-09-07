@@ -1,0 +1,149 @@
+<ion-card padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 col-12>
+        <p>STATUS</p>
+        <h3 text-wrap [style.color]="runStatusColor">{{ruleRunHistory?.RunStatus}}</h3>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <p>RESULT COUNT</p>
+        <h3 text-wrap *ngIf="ruleRunHistory && ruleRunHistory.RunResultRowCount && ruleRunHistory.RunResultRowCount!='null'">{{ ruleRunHistory.RunResultRowCount}}</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    PARAMETERS
+  </ion-card-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 col-12 *ngFor="let param of ruleParams">
+        <ion-item>
+          <p>{{param.key}}</p>
+          <h3 text-wrap>{{param.value}}</h3>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="param.value"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    QUERY
+  </ion-card-header>
+  <ion-item padding-bottom>
+    <h3 text-wrap>{{ruleRunHistory.RuleQueryFinalString}}</h3>
+    <button item-end ion-button clear large>
+      <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleQueryFinalString"></ion-icon>
+    </button>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    LOGS
+  </ion-card-header>
+  <ion-item padding-bottom>
+    <h2>{{ruleRunHistory.RunLog ? ruleRunHistory.RunLog : 'No Logs'}}</h2>
+    <button item-end ion-button clear large [disabled]="!ruleRunHistory.RunLog">
+      <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RunLog"></ion-icon>
+    </button>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    MORE DETAILS
+  </ion-card-header>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>RuleRunID</p>
+          <h2>{{ruleRunHistory.RuleRunID}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleRunID"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>BatchID</p>
+          <h2>{{ruleRunHistory.BatchID}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.BatchID"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>RuleExecutedByUser</p>
+          <h2>{{ruleRunHistory.RuleExecutedByUser}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleExecutedByUser"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>RuleID</p>
+          <h2>{{ruleRunHistory.RuleID}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleID"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>QueryID</p>
+          <h2>{{ruleRunHistory.QueryID}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.QueryID"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>TargetTableName</p>
+          <h2>{{ruleRunHistory.TargetTableName}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.TargetTableName"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>RuleRunStartTime</p>
+          <h2>{{ruleRunHistory.RuleRunStartTime}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleRunStartTime"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-md-6 col-12>
+        <ion-item>
+          <p>RuleRunEndTime</p>
+          <h2>{{ruleRunHistory.RuleRunEndTime}}</h2>
+          <button item-end ion-button clear large>
+            <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleRunHistory.RuleRunEndTime"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

@@ -1,0 +1,64 @@
+<ion-split-pane ion-fixed when="(min-width: 1024px)">
+
+    <ion-menu [content]="content" style="z-index:1000;" [ngClass]="showSmallMenu ? 'small-menu' : ''">
+        <ion-header>
+            <ion-toolbar text-center color="background-main">
+                <img (tap)="goToHome()" margin-left style="width:auto; height:50px; display:block; margin:auto; cursor: pointer;" [src]="!showSmallMenu ? './assets/imgs/logo.png' : './assets/imgs/logo_small.png'">
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="menu-content">
+            <side-menu [showSmallMenu]="showSmallMenu" *ngIf="authState?.isLoggedIn"></side-menu>
+        </ion-content>
+        <ion-footer style="background: #F5F5F5;">
+            <button class="show-while-large" no-margin ion-button full clear icon-right (tap)="toogleMenu()">
+                <ion-icon style="position:absolute; right: 10px;" color="secondary" [name]="showSmallMenu ? 'ios-arrow-forward' : 'ios-arrow-back'"></ion-icon>
+            </button>
+        </ion-footer>
+    </ion-menu>
+
+    <ion-header>
+        <ion-toolbar text-center color="primary">
+            <!-- <button ion-button menuToggle no-margin no-padding style="height:unset !important;">
+                <img menuToggle style="width:auto; height:50px; display:block;" src="./assets/imgs/logo_small.png">
+            </button> -->
+            <button ion-button menuToggle>
+                <ion-icon name="menu" style="margin-left: 233px;"></ion-icon>
+            </button>
+
+            <ion-title class="absolute-center" style="background-color: #4f2e7f;">{{title}}</ion-title>
+            <ion-buttons right>
+
+                <button ion-button disabled style="opacity:1.0;" class="show-while-medium">
+                    <ion-col>
+                        <ion-row>
+                            <!--Subrata-->
+                            <form class="app-search d-none d-md-block d-lg-block">
+                                <ion-input style="background: #654890;opacity: 1;border-radius: 12px;" type="text" class="form-control" placeholder="Enter your keyword"></ion-input>
+                            </form>
+                            <!--Subrata-->
+                            <!-- <ion-label no-margin style="font-size: smaller;" text-center>{{now | momentPipe: 'hh:mm:ss a'}}</ion-label> -->
+                        </ion-row>
+                        <!--<ion-row maring-top>
+                            {{now | momentPipe:'LL'}}
+                        </ion-row>-->
+                    </ion-col>
+                </button>
+
+
+                <!--<button ion-button icon-only (tap)="presentPopover($event)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button> -->
+                <button ion-button icon-only (tap)="presentPopover($event)">
+                    <!-- <ion-icon name="user"></ion-icon> -->
+                    <img style="width:auto; height:32px;" src="../assets/images/users/user.png"> 
+
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="main-page-content" padding>
+
+        <ion-nav margin ion-fixed style="margin:unset;" [root]="root" main #content swipeBackEnabled="false"></ion-nav>
+
+    </ion-content>
+</ion-split-pane>

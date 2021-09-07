@@ -1,0 +1,130 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+//$font-path: "../assets/css/fonts";
+
+// $font-family-base: 'sans-serif';
+// $font-family-ios-base: 'sans-serif';
+// $font-family-md-base: 'sans-serif';
+// $font-family-wp-base: 'sans-serif';
+
+@font-face {
+  font-family: 'GT-Walsheim-Pro';
+  src: url("../assets/css/fonts/GT-Walsheim-Pro-Regular/GT-Walsheim-Pro-Regular.eot");
+  src: url("../assets/css/fonts/GT-Walsheim-Pro-Regular/GT-Walsheim-Pro-Regular.woff") format("woff"), url("../assets/css/fonts/GT-Walsheim-Pro-Regular/GT-Walsheim-Pro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+$font-family-base: 'GT-Walsheim-Pro';
+$font-family-ios-base: 'GT-Walsheim-Pro';
+$font-family-md-base: 'GT-Walsheim-Pro';
+$font-family-wp-base: 'GT-Walsheim-Pro';
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+$menu-width:240px;
+$split-pane-md-side-min-width:240px;
+$split-pane-md-side-max-width	:240px;
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+// Generate a new one from - https://www.materialpalette.com/blue-grey/red
+
+$colors: (
+  primary:    #757575,
+  //secondary:  #3483BA,
+  secondary:  #4f2e7f,
+  secondary_light:  rgba(52, 130, 186, 0.555),
+  danger:     #ef5350,
+  light:      #fff,
+  dark:       #000,
+  background-main:    #F9F9F9,
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+//@import "noto-sans";
+
+// .app-search {
+//   line-height: 68px; }
+//   .app-search .form-control {
+//     border-radius: 10px;
+//     border-color: transparent;
+//     transition: 0.2s ease-in;
+//     width: 200px;
+// 	color: #fff;
+// 	background-color: #654890;
+// 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='-1 0 136 136.21852'%3e%3cpath d='M 93.148438 80.832031 C 109.5 57.742188 104.03125 25.769531 80.941406 9.421875 C 57.851562 -6.925781 25.878906 -1.460938 9.53125 21.632812 C -6.816406 44.722656 -1.351562 76.691406 21.742188 93.039062 C 38.222656 104.707031 60.011719 105.605469 77.394531 95.339844 L 115.164062 132.882812 C 119.242188 137.175781 126.027344 137.347656 130.320312 133.269531 C 134.613281 129.195312 134.785156 122.410156 130.710938 118.117188 C 130.582031 117.980469 130.457031 117.855469 130.320312 117.726562 Z M 51.308594 84.332031 C 33.0625 84.335938 18.269531 69.554688 18.257812 51.308594 C 18.253906 33.0625 33.035156 18.269531 51.285156 18.261719 C 69.507812 18.253906 84.292969 33.011719 84.328125 51.234375 C 84.359375 69.484375 69.585938 84.300781 51.332031 84.332031 C 51.324219 84.332031 51.320312 84.332031 51.308594 84.332031 Z M 51.308594 84.332031'/%3e%3c/svg%3e"); 
+// 	background-repeat: no-repeat;
+// 	background-size: 20px 25px;
+// 	background-position: right 0.75rem center; }
+//     .app-search .form-control:focus {
+//       width: 300px; }

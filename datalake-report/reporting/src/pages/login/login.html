@@ -1,0 +1,25 @@
+<ion-content padding>
+  <div ion-fixed style="width:100%; height:100%;">
+    <img style="width:30%; height:auto; display:block; margin:auto;" src="./assets/imgs/logo.png">
+    <div padding style="width:50%; display:block; margin:auto;">
+      <ion-item>
+        <ion-label floating>Username11</ion-label>
+        <ion-input type="text" [(ngModel)]="authData.username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password1</ion-label>
+        <ion-input type="password" [(ngModel)]="authData.password"></ion-input>
+      </ion-item>
+      <ion-label small text-wrap text-center style="font-size:x-small;" color="danger">
+        {{errorMessage}}
+      </ion-label>
+
+      <ion-row margin-left style="margin-top:30px;" padding-top>
+        <button style="margin:auto;" full [disabled]="!(authData.username && authData.password)" (tap)="performLogin()" ion-button
+          color="primary">Login</button>
+      </ion-row>
+    </div>
+  </div>
+
+</ion-content>

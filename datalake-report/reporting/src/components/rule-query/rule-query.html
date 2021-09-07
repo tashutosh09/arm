@@ -1,0 +1,26 @@
+<ion-card *ngIf="ruleQuery">
+
+  <ion-card-header>
+    Query ID : {{ruleQuery.QueryID}}
+
+  </ion-card-header>
+  <ion-card-content padding-left>
+    Created On : {{ruleQuery.VersionTimeStamp | momentStandardPipe}}
+  </ion-card-content>
+  <ion-row style="margin-top:10px;">
+    <button ion-button clear icon-right>
+      Copy ID
+      <ion-icon name="md-copy" ngxClipboard [cbContent]="ruleQuery.QueryID"></ion-icon>
+    </button>
+
+    <button ion-button clear icon-right>
+      View Query
+      <ion-icon name="code"></ion-icon>
+    </button>
+
+    <button ion-button clear icon-right>
+      Show More
+      <ion-icon name="eye"></ion-icon>
+    </button>
+  </ion-row>
+</ion-card>

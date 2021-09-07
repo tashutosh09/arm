@@ -1,0 +1,41 @@
+<ion-card no-padding no-margin *ngIf="viewOnly" [style.background-color]="showRunHistory ? '#F5F5F5' : '#fff' ">
+  <ion-row text-center id="rule-main-details">
+
+    <ion-col col-6 text-left>
+      <ion-item no-padding style="background-color: unset !important;font-weight: 600;">
+        <!-- Subrata -->
+        <!-- <ng-svg-icon *ngIf="rule.RuleIcon" [name]="rule.RuleIcon" color="#000" item-start></ng-svg-icon> -->
+        {{ rule.RuleName }}
+      </ion-item>
+    </ion-col>
+
+    <ion-col col-md-2 col-4 text-left>
+      <ion-label [style.color]="runHistoryIconColor" style="font-weight: 600;">{{rule?.LatestRun?.RunStatus}}</ion-label>
+    </ion-col>
+
+    <ion-col col-md-2 col-1 text-left class="show-while-medium">
+      <ion-label style="font-size: smaller;font-weight: 600;" *ngIf="ruleRunStartTime">{{ruleRunStartTime}}</ion-label>
+    </ion-col>
+
+    <ion-col col-1 text-left>
+      <button ion-button icon-only full clear (tap)="showRunHistory=!showRunHistory; showQuery=false">
+        <ion-icon [name]="showRunHistory ? 'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col col-1 text-right padding-right>
+      <button ion-button icon-only small outline (tap)="onSelectTap()" style="width:28px; height:28px;">
+        <ion-icon [hidden]="!selected" name="checkmark"></ion-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
+  <div *ngIf="showRunHistory">
+    <ion-row padding-left no-margin text-wrap>
+      <ion-label>{{ rule.RuleDescription }}</ion-label>
+    </ion-row>
+    <ion-row>
+      <rule-history style="width:100%; padding:8px;" [Rule]="rule" [ruleID]="rule.RuleID"></rule-history>
+    </ion-row>
+  </div>
+</ion-card>

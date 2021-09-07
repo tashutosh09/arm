@@ -1,0 +1,27 @@
+rule {
+    .card-content{
+        padding: unset;
+    }
+    ion-col{
+        margin: auto !important;
+    }
+
+    ion-card{
+        //border-radius: 8px !important;
+        width: unset !important;
+        -webkit-box-shadow: unset !important;
+        box-shadow: unset !important;
+        border-bottom: 0.5px solid lightgray;
+        
+    }
+    #rule-main-details{
+        padding-left: 8px !important;
+    }
+
+    @media only screen and (max-width: 576px) {
+        #rule-main-details{
+            padding-right: 8px !important;
+        }
+    }
+
+}

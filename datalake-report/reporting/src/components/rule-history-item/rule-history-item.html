@@ -1,0 +1,44 @@
+<ion-grid no-margin>
+  <ion-row class="history-item">
+
+    <ion-col col-lg-2 col-md-2 col-6 text-left id="history-run-by">
+      <ion-row style="font-weight:700;">
+        {{item.RuleExecutedByUser | uppercase }}
+      </ion-row>
+    </ion-col>
+    <ion-col col-lg-2 col-md-2 col-6 text-md-center text-right>
+      <ion-badge full style="background-color:#546E7A;">{{companyName}}</ion-badge>
+    </ion-col>
+
+    <ion-col col-lg-5 col-md-8 col-12>
+      <ion-row>
+        <ion-col col-2 text-left>
+          <ion-badge *ngIf="item.RunResultRowCount && item.RunResultRowCount!='null' && item.RunStatus=='COMPLETED'" style="background-color:#ef5350; font-size:x-small !important;">{{item.RunResultRowCount}}</ion-badge>
+        </ion-col>
+
+        <ion-col col-5 padding-left text-md-left text-center style="font-size:smaller; font-weight:700;" [style.color]="runStatusColor">
+          {{item.RunStatus}}
+        </ion-col>
+        <ion-col col-5 text-right style="font-size:smaller;">
+          {{item.RuleRunStartTime | momentStandardPipe }}
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+    <ion-col col-lg-3 col-12 text-right>
+      <ion-row style="float:right;">
+        <button text-left col-5 ion-button padding clear icon-left small (tap)="showDetails(item)">
+          <ion-icon style="color:#1E88E5; font-weight:700;" name="ios-help-circle-outline"></ion-icon>
+          View
+        </button>
+        <button text-right col-6 padding ion-button clear icon-left small [disabled]="item.RunStatus!='COMPLETED' || item.RunResultRowCount=='null' || item.RunResultRowCount=='0'"
+          (tap)="isDownloading? '' : downloadResults(item.RuleRunID)">
+          <ion-spinner *ngIf="isDownloading" style="position:unset !important;"></ion-spinner>
+          <ion-icon style="color:#FB8C00; font-weight:700;" *ngIf="!isDownloading" name="ios-download-outline"></ion-icon>
+          <span *ngIf="!isDownloading">Export</span>
+        </button>
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

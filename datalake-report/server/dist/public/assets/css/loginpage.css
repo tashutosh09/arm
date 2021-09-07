@@ -1,0 +1,62 @@
+
+/******************************************************************
+				Login and recover password Page
+*******************************************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem 2.5rem;
+    border-radius: 10px;
+    background-color: #fff !important;
+}	
+.box-shadow {
+  box-shadow: -0.5rem 0.5rem rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: -0.5rem 0.5rem rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: -0.5rem 0.5rem rgba(0, 0, 0, 0.08); }
+.login-register {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  padding: 2% 0;
+  position: fixed; }
+
+.login-box {
+  width: 400px;
+  margin: 0 auto; }
+  .login-box .footer {
+    width: 100%;
+    left: 0px;
+    right: 0px; }
+  .login-box .social {
+    display: block;
+    margin-bottom: 30px; }
+
+#recoverform {
+  display: none; }
+
+.login-sidebar {
+  padding: 0px;
+  margin-top: 0px; }
+  .login-sidebar .login-box {
+    right: 0px;
+    position: absolute;
+    height: 100%; }
+
+.accountname {
+	background-image: url("../../assets/images/icons/accountname.png") !important; 
+	background-repeat: no-repeat !important;
+	background-size: 17px 18px !important;
+	background-position: right 0.75rem center !important;
+	padding: 1.7rem 1rem !important;
+}
+.password {
+	background-image: url("../../assets/images/icons/password.png") !important; 
+	background-repeat: no-repeat !important;
+	background-size: 21px 12px !important;
+	background-position: right 0.75rem center !important;
+	padding: 1.7rem 1rem !important;
+}

@@ -1,0 +1,115 @@
+<ion-content>
+  <accordion> 
+    <accordion-group no-margin (onOpen)="clickOnDashboardButton();">
+      <accordion-heading>
+        <ion-row no-padding no-margin>
+          <ion-col col-2 no-padding no-margin>
+          </ion-col>
+          <ion-col col-10 no-padding no-margin>
+            <span style="font-size: 1.7rem;">Dashboard
+              <!-- <ion-icon [name]="isOpen1 ? 'ios-arrow-up' : 'ios-arrow-forward'" style="right: 15px; position: absolute;">
+              </ion-icon> -->
+            </span>
+          </ion-col>
+        </ion-row>
+      </accordion-heading>
+      <!-- <ion-list no-margin>
+        <accordion *ngFor="let ruleGroup of ruleGroups">
+          <accordion-group no-margin (onOpen)="onRuleGroupExpand(); ruleGroup.isOpenRuleGroup=true"
+            (onClose)="ruleGroup.isOpenRuleGroup=false">
+            <accordion-heading [ngClass]="ruleGroup.isOpenRuleGroup ? 'selected' : ''">
+              <ion-row no-padding no-margin>
+                <ion-col col-2 no-padding no-margin>
+                </ion-col>
+                <ion-col col-10 no-padding no-margin>
+                  <span style="font-size: 1.7rem;" class="rule-group-text" *ngIf="!showSmallMenu">{{ruleGroup.RuleGroupName}}
+                    <ion-icon [name]="ruleGroup.isOpenRuleGroup ? 'ios-arrow-up' : 'ios-arrow-forward'"
+                      style="right: 15px; position: absolute;"></ion-icon>
+                  </span>
+                </ion-col>
+              </ion-row>
+            </accordion-heading>
+            <ion-list no-margin>
+
+              <accordion *ngFor="let industryRule of ruleGroup.industryList">
+                <accordion-group no-margin (onOpen)="onRuleGroupExpand(); industryRule.isOpenRuleGroup=true"
+                  (onClose)="industryRule.isOpenRuleGroup=false">
+                  <accordion-heading [ngClass]="industryRule.isOpenRuleGroup ? 'selected' : ''">
+                    <ion-row no-padding no-margin>
+                      <ion-col col-2 no-padding no-margin>
+                      </ion-col>
+                      <ion-col col-10 no-padding no-margin>
+                        <span style="font-size: 1.7rem;margin-left: 14px;" class="industry-text" *ngIf="!showSmallMenu">{{industryRule.RuleIndustryName}}
+                          <ion-icon [name]="industryRule.isOpenRuleGroup ? 'ios-arrow-up' : 'ios-arrow-forward'"
+                            style="right: 15px; position: absolute;"></ion-icon>
+                        </span>
+                      </ion-col>
+                    </ion-row>
+                  </accordion-heading>
+                  <ion-list no-margin>
+                    <button padding-left *ngFor="let ruleSubGroup of industryRule.subRuleGroupList;let i=index" icon-only="showSmallMenu" ion-item (tap)="onRuleGroupSelect(ruleSubGroup)">
+                    <span style="font-size: 1.7rem;" class="rule-sub-group-text">{{ruleSubGroup.RulesubGroupname}}</span>
+                    <ng-svg-icon [name]="dummy" color="#4f2e7f" style="padding:2px;" item-start></ng-svg-icon>
+                  </button>
+                  </ion-list>
+                </accordion-group>
+              </accordion>
+            </ion-list>
+          </accordion-group>
+        </accordion>
+      </ion-list> -->
+    </accordion-group>
+  </accordion>
+  <!--Start Subrata-->
+  <!-- <accordion>  -->
+    <!-- <accordion-group no-margin>
+      <ion-list no-margin> -->
+        <accordion *ngFor="let industryRule of industryRule">
+          <accordion-group no-margin (onOpen)="onRuleGroupExpand(); industryRule.isOpenRuleGroup=true"
+            (onClose)="industryRule.isOpenRuleGroup=false">
+            <accordion-heading [ngClass]="industryRule.isOpenRuleGroup ? 'selected' : ''">
+              <ion-row no-padding no-margin>
+                <ion-col col-2 no-padding no-margin>
+                </ion-col>
+                <ion-col col-10 no-padding no-margin>
+                  <span style="font-size: 1.7rem;margin-left: 14px;" class="industry-text" *ngIf="!showSmallMenu">{{industryRule.RuleIndustryName}}
+                    <ion-icon [name]="industryRule.isOpenRuleGroup ? 'ios-arrow-up' : 'ios-arrow-forward'"
+                      style="right: 15px; position: absolute;"></ion-icon>
+                  </span>
+                </ion-col>
+              </ion-row>
+            </accordion-heading>
+            <ion-list no-margin>
+              <button padding-left *ngFor="let ruleSubGroup of industryRule.subRuleGroupList;let i=index" icon-only="showSmallMenu" ion-item (tap)="onRuleGroupSelect(ruleSubGroup)">
+                <span style="font-size: 1.7rem;" class="rule-sub-group-text">{{ruleSubGroup.RulesubGroupname}}</span>
+                <ng-svg-icon [name]="dummy" color="#4f2e7f" style="padding:2px;" item-start></ng-svg-icon>
+              </button>
+            </ion-list>
+          </accordion-group>
+        </accordion>
+      <!-- </ion-list>
+    </accordion-group> -->
+  <!-- </accordion> -->
+  <!--Home-->
+  <accordion> 
+    <accordion-group no-margin (onOpen)="clickOnHomeButton()">
+      <accordion-heading>
+        <ion-row no-padding no-margin>
+          <ion-col col-2 no-padding no-margin>
+            <!-- Subrata -->
+            <!-- <ng-svg-icon name="home" color="#4f2e7f" style="padding:2px;" item-start></ng-svg-icon> -->
+          </ion-col>
+          <ion-col col-10 no-padding no-margin>
+            <!--button icon-only="showSmallMenu" ion-item (tap)="clickOnHomeButton()"></button-->
+            <span style="font-size: 1.7rem;">Home
+            </span>
+            
+          </ion-col>
+        </ion-row>
+      </accordion-heading>
+    </accordion-group>
+  </accordion>
+  <!--End Subrata-->
+</ion-content>
+
+<!--3483BA-->

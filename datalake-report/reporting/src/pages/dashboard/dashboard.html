@@ -1,0 +1,43 @@
+<!-- Main wrapper -->
+<ion-content id="main-wrapper">
+
+    <ion-menu [content]="content" style="z-index:1000;" [ngClass]="showSmallMenu ? 'small-menu' : ''">
+        <ion-header>
+            <ion-toolbar text-center color="background-main">
+                <img (tap)="goToHome()" margin-left
+                    style="width:auto; height:50px; display:block; margin:auto; cursor: pointer;"
+                    [src]="!showSmallMenu ? './assets/imgs/logo.png' : './assets/imgs/logo_small.png'">
+            </ion-toolbar>
+        </ion-header>
+    </ion-menu>
+
+    <div class="page-wrapper">
+        <ion-grid class="container-fluid">
+            <ion-row class="row m-t-40 p-b-20">
+                <ion-col class="col-md-6 col-lg-4 col-xlg-4" *ngFor="let ruleGroup of ruleGroups">
+                    <div class="card" style="background: #f0f0f0;padding-top: 14%;border-radius: 5px;">
+                        <div class="box bg-box text-center p-30" style="text-align:center;padding-bottom: 8%;">
+
+                            <div *ngIf="ruleGroup.RuleGroupName == 'Internal Audit'">
+                                <h1 class="m-t-10 m-b-20"><img src="../../assets/images/icons/Internal-Audit.png"
+                                        alt="Internal Audit" /></h1>
+                            </div>
+                            <div *ngIf="ruleGroup.RuleGroupName == 'Statutory Audit'">
+                                <h1 class="m-t-10 m-b-20"><img src="../../assets/images/icons/Statutory-Audit.png"
+                                        alt="Statutory Audit" /></h1>
+                            </div>
+                            <div *ngIf="ruleGroup.RuleGroupName == 'Transfer Pricing'">
+                                <h1 class="m-t-10 m-b-20"><img src="../../assets/images/icons/Transfer-Pricing.png"
+                                        alt="Transfer Pricing" /></h1>
+                            </div>
+                            <h6 class="text-dark m-b-20" style="text-align: center;">{{ruleGroup.RuleGroupName}}</h6>
+                            <button type="button" class="btn waves-effect waves-light btn-block btn-info"
+                                (tap)="onRuleGroupClick(ruleGroup)">Know more</button>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+<!-- End Wrapper -->

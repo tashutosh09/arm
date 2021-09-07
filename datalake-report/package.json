@@ -1,0 +1,25 @@
+{
+    "name": "package",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "sync_common_code": "cp -rf common_code/ server/src/common_code/ && cp -rf common_code/ reporting/src/common_code/",
+        "update_ui_config": "cp -f config_ui/ui.config.ts reporting/src/app/app.config.ts",
+        "update_config": "npm run update_ui_config",
+        "update_ui_config_prod": "cp -f config_ui/ui.config.prod.ts reporting/src/app/app.config.ts",
+        "update_config_prod": "npm run update_ui_config_prod",
+        "clean_ui": "cd reporting && rm -rf node_modules && rm -rf www",
+        "clean_server": "cd server && rm -rf node_modules && rm -rf dist && rm -rf temp",
+        "clean_all": "npm run clean_ui && npm run clean_server && rm -rf builds",
+        "install_ui": "cd reporting && npm install",
+        "install_server": "cd server && npm install",
+        "install_all": "npm run install_ui && npm run install_server",
+        "build_ui": "npm run update_config_prod && cd reporting && npm run clean && npm run build --prod",
+        "build_server": "cd server && rm -rf dist && rm -rf temp && npm run build --prod",
+        "update_ui_on_server": "rm -rf server/dist/public && cp -rf reporting/www server/dist/public",
+        "package_server": "rm -rf builds && pkg ./server --out-path builds",
+        "build_all": "npm run build_ui && npm run build_server && npm run update_ui_on_server && npm run package_server",
+        "clean_build": "npm run clean_all && npm run install_all && npm run build_all"
+    },
+    "devDependencies": {}
+}

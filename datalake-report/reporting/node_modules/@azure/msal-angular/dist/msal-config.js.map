@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/msal-config.ts"],"names":[],"mappings":";;AAGA;IAAA;QAEI,cAAS,GAAI,0CAA0C,CAAC;QAExD,sBAAiB,GAAK,IAAI,CAAC;QAC3B,kBAAa,GAAI,gBAAgB,CAAC;QAClC,2BAAsB,GAAI,KAAK,CAAC;QAIhC,qBAAgB,GAAI,IAAI,CAAC;QACzB,8BAAyB,GAAG,IAAI,CAAE;IAWtC,CAAC;IAAD,iBAAC;AAAD,CAtBA,AAsBC,IAAA;AAtBY,gCAAU","file":"msal-config.js","sourceRoot":""}

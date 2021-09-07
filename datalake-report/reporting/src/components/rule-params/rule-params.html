@@ -1,0 +1,105 @@
+<ion-card class="parameter-row" style="overflow: unset;">
+  <ion-grid padding>
+    <ion-row>
+
+      <ion-col col-12 col-sm-6>
+        <ion-item no-lines padding>
+          <ion-label class="filter-label" stacked>Company</ion-label>
+          <ion-select style="padding-left:8px;" interface="popover" [(ngModel)]="reducedParams['param.source.dbname']"
+            class="box-input">
+            <ion-option *ngFor="let company of companyNames" [value]="company.systemName"
+              (ionSelect)="getFeeds($event, company)">{{company.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-12 col-sm-6 *ngFor="let param of ruleGroupParams">
+
+        <ion-item no-lines padding *ngIf="param.dataType=='text'">
+          <ion-label class="filter-label" stacked>{{param.title}}</ion-label>
+          <ion-input class="box-input" type="text" [(ngModel)]="reducedParams[param.key]"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines padding *ngIf="param.dataType=='table'">
+          <ion-label class="filter-label" stacked>{{param.title}}</ion-label>
+          <ion-select disabled="{{!(this.feeds.length > 0)}}" style="padding-left:8px;" interface="popover"
+            [(ngModel)]="reducedParams[param.key]" class="box-input">
+            <ion-option *ngFor="let feed of feeds" [value]="feed.systemName">{{feed.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-row padding *ngIf="param.dataType=='timestamp'">
+          <ion-label class="filter-label">{{param.title}}</ion-label>
+          <my-date-picker name="mydate" [options]="dateOptions" [(ngModel)]="reducedParams[param.key]"></my-date-picker>
+        </ion-row>
+
+        <ion-item no-lines padding *ngIf="param.dataType=='select'">
+          <ion-label class="filter-label" stacked>{{param.title}}</ion-label>
+          <ion-select style="padding-left:8px;" [(ngModel)]="reducedParams[param.key]" class="box-input">
+            <ion-option *ngFor="let option of param.options" [value]="option.value">{{option.key}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <!-- Start Subrata 26032021 -->
+        <ion-row>
+          <ion-list radio-group [(ngModel)]="reducedParams[param.key]" no-lines *ngIf="param.dataType=='radio'">
+            <!-- <ion-radio-group value="saturday"> -->
+            <ion-list-header class="ion-no-padding" no-lines>
+              {{param.title}}
+            </ion-list-header>
+            <ion-row>
+              <ion-col *ngFor="let val of param.values">
+                <ion-item style="padding:0px !important;">
+                  <ion-radio value={{val.value}}></ion-radio>
+                  <ion-label class="filter-label" stacked>{{val.label}}</ion-label>
+                </ion-item>
+              </ion-col>
+              <!-- <ion-col>o [(ngModel)]="reducedParams[param.key]"
+                  <ion-item style="padding:0px !important;">
+                    <ion-radio [(ngModel)]="reducedParams[param.key]" value="sunday"></ion-radio>
+                    <ion-label class="filter-label" stacked>Sunday</ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item style="padding:0px !important;">
+                    <ion-radio [(ngModel)]="reducedParams[param.key]" value="saturday"></ion-radio>
+                    <ion-label class="filter-label" stacked>Saturday</ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item style="padding:0px !important;">
+                    <ion-radio [(ngModel)]="reducedParams[param.key]" value="saturday"></ion-radio>
+                    <ion-label class="filter-label" stacked>Both</ion-label>
+                  </ion-item>
+                </ion-col> -->
+            </ion-row>
+          </ion-list>
+
+        </ion-row>
+        <!-- End Subrata 26032021 [(ngModel)]="reducedParams[param.key]" -->
+        <!-- Start Subrata -->
+        <ion-row>
+          <ion-item no-lines padding *ngIf="param.dataType=='file'">
+            <ion-label class="filter-label" stacked>{{param.title}}</ion-label>
+            <ion-input type="file" accept="image/*" id="upload"></ion-input>
+          </ion-item>
+        </ion-row>
+        <!-- End Subrata -->
+        <ion-row>
+          <ion-list no-lines *ngIf="param.dataType=='checkbox'">
+            <ion-list-header class="ion-no-padding" no-lines>
+              {{param.title}}
+            </ion-list-header>
+            <ion-row>
+              <ion-col *ngFor="let val of param.values">
+                <ion-item style="padding:0px !important;">
+                  <ion-label class="filter-label" stacked>{{val.label}}</ion-label>
+                  <ion-checkbox (click)="selectMember(val,param.key)" [(ngModel)]="val.checked" value=val.value></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

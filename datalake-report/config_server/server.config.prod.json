@@ -1,0 +1,36 @@
+{
+    "REST_END_POINT": {
+        "BASE_PATH": "http://127.0.0.1:8400/",
+        "QUERY_END_POINT": "proxy/v1/hive/execute-dml",
+        "SELECT_QUERY_END_POINT": "proxy/v1/hive/query",
+		"HIVE_SCHEMA_END_POINT": "proxy/v1/hive/schemas/",
+        "CATEGORUES_END_POINT": "proxy/v1/feedmgr/categories",
+        "LOGIN": "login",
+        "USER_DETAILS": "proxy/v1/about/me",
+        "AUTH": "Basic Z3RhZG1pbjpHVEFkbWluMTIzNA=="
+    },
+    "DATABASE": {
+        "HOST": "127.0.0.1",
+        "PORT": 6603,
+        "USER": "root",
+        "PASSWORD": "cloudera",
+        "DATABASE": "RuleMetadata",
+        "CONNECTION_LIMIT": 5,
+        "DEBUG": false
+    },
+    "SECRET": {
+        "jtw_key": "gtddl",
+        "expiresIn": 36000,
+        "encryption_key": "GTDDL_SOME_RANDOM_KEY_FOR_JWT"
+    },
+    "CRON_JOB": {
+        "TIMER": "*/59 * * * * *"
+    },
+    "RULE_RUN_HISTORY_CACHE": {
+        "TIMER": "* */2 * * *",
+        "LIFE": 72000
+    },
+    "PORT": 3002,
+    "LOGS": "./server-logs",
+    "TEMP": "./server-temp"
+}
